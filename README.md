@@ -50,6 +50,10 @@ The result will be a *.csv* file that can be use to import into MS SQL database
 
 > python 1a_Clean_text_files.py \<filename\>
 
+***Requirements***
+
+- Python
+
 After import into MS SQL as 2 tables: ***pre*** for **PreStuTrips.txt** and ***post*** for **PostStutrips.txt**, we can use the following querry to compare 2 tables:
 
 ```SQL
@@ -93,10 +97,38 @@ Using python with ***geopandas*** library, we can easily convert the coordinates
 ***Requirements***
 
 - python >= 3.7
-- geopandas
+- geopandas >= 0.7.0
 - pyproj >= 2.1
 
-***Libraries installation guide***
+### II.3. Result
+
+The result can be seen in **convert_ESRI102747.shp**
+
+## III. Challenge 2
+
+### III.1 Solution
+
+Using Python with ***geopandas*** and ***pandas*** we can extract the point from the shapefile
+
+### III.2 Tool
+
+>Extract_point.py
+
+***Usage***
+
+> python Extract_point.py \<source file\>
+
+***Requirements***
+
+- python >= 3.7
+- pandas >= 1.0.4
+- geopandas >= 0.7.0
+
+### III.3 Result
+
+The result is in the file **Pierce_ShpFrmGeo_Projected.csv**
+
+## IV. Geopandas installation guide
 
 Since geopandas is very hard to install if you don't using Anaconda, we can follow the guide to install it:
 
@@ -116,13 +148,3 @@ pipwin install six
 pipwin install rtree
 pipwin install geopandas
 ```
-
-### II.3. Result
-
-The result can be seen in **convert_ESRI102747.shp**
-
-## III. Challenge 2
-
-### III.1 Solution
-
-Using Python with ***geopandas*** and ***pandas*** we can extract the point from the shapefile
