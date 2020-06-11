@@ -1,11 +1,24 @@
 # Challenge
 
-We have three files: PreStuTrips.txt and PostStutrips.txt and convert.shp.
+1. We have three files: PreStuTrips.txt and PostStutrips.txt and convert.shp.
 
-a. Please import the PreStuTrips.txt and PostStutrips.txt files into a Microsoft SQL server database and find the differences between the PostStutrips.txt and the PreStuTrips.txt
+    a. Please import the PreStuTrips.txt and PostStutrips.txt files into a Microsoft SQL server database and find the differences between the PostStutrips.txt and the PreStuTrips.txt
 
-b. Please convert the convert.shp file from the negative coordinates
-“GCS_WGS_1984” to the positive coordinates “NAD_1983_StatePlane_Virginia_South_FIPS_4502_Feet”
+    b. Please convert the convert.shp file from the negative coordinates “GCS_WGS_1984” to the positive coordinates “NAD_1983_StatePlane_Virginia_South_FIPS_4502_Feet”
+
+2. From the line shapefile named Pierce, write a program to list all the points insides the line shapefile Pierce as the following CSV format file:
+
+```csv
+    ObjectID, X1, Y1
+    ObjectID, X2,Y2
+    .......
+    .......
+    ObjectID, X n, Yn
+```
+
+> With (X1, Y1), (X2, Y2)..., (Xn, Yn) are all the respective points inside all the lines of the line shapefile Pierce.
+
+>ObjectID is the value on the same column of each single line inside the line shapefile Pierce
 
 ## I. Challenge 1a
 
@@ -107,3 +120,9 @@ pipwin install geopandas
 ### II.3. Result
 
 The result can be seen in **convert_ESRI102747.shp**
+
+## III. Challenge 2
+
+### III.1 Solution
+
+Using Python with ***geopandas*** and ***pandas*** we can extract the point from the shapefile
