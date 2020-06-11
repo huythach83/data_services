@@ -22,10 +22,10 @@ else:
 
         df = gpd.read_file(src_file)
 
-        # Set the projection of the dataframe to GCS_WGS_1984 - Also known as EPSG:4326
+        # Set the projection of the datafram
         df.crs = src_crs
 
-        # Convert the projection to NAD_1983_StatePlane_Virginia_South_FIPS_4502_Feet - Also known as ESRI:102747
+        # Convert the projection to destination CRS
         df_convert = df.to_crs(dest_crs)
 
         # Save to file

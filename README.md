@@ -86,6 +86,10 @@ Detailed result can be viewed in file **1a_Compare_db_result.md**
 
 Using python with ***geopandas*** library, we can easily convert the coordinates of shapefile between CRS.
 
+> *GCS_WGS_1984* also known as *EPSG:4326*
+
+> *NAD_1983_StatePlane_Virginia_South_FIPS_4502_Feet* also known as *ESRI:102747*
+
 ### II.2. Tool
 
 > 1b_Convert_coord.py
