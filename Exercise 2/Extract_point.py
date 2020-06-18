@@ -2,6 +2,7 @@ import geopandas as gpd
 import pandas as pd
 import sys
 from os import path
+from tqdm import tqdm
 
 try:
     src_file = sys.argv[1]
@@ -16,9 +17,12 @@ else:
     result = []
 
     print('Extracting point...')
-    for idx, row in gdf.iterrows():
-        for coord in row['geometry'].coords:
-            result.append([row['OBJECTID'], *coord])
+    with tqdm(total=gdf.shape[0]) as pbar:
+        for idx, row in gdf.iterrows():
+            for coord in row['geometry'].coords:
+                result.append([row['OBJECTID'], *coord])
+            
+            pbar.update()
 
     print('Writing CSV...')
     rdf = pd.DataFrame(result)
